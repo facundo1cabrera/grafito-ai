@@ -1,0 +1,13 @@
+services:
+  grafitodb:
+    image: postgis/postgis:15-master
+    container_name: grafitodb
+    restart: always
+    environment:
+      POSTGRES_USER: grafito_local
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: shiftrx
+    volumes:
+      - ~/.postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
