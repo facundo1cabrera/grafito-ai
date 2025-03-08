@@ -6,8 +6,11 @@ services:
     environment:
       POSTGRES_USER: grafito_local
       POSTGRES_PASSWORD: mysecretpassword
-      POSTGRES_DB: shiftrx
+      POSTGRES_DB: grafitodb
     volumes:
-      - ~/.postgres:/var/lib/postgresql/data
+      - grafito_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+volumes:
+  grafito_data:
